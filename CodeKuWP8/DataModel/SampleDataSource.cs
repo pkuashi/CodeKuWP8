@@ -7,6 +7,7 @@ using Windows.Data.Json;
 using Windows.Storage;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
+using System.Net.Http;
 
 // The data model defined by this file serves as a representative example of a strongly-typed
 // model.  The property names chosen coincide with data bindings in the standard item templates.
@@ -120,12 +121,16 @@ namespace CodeKuWP8.Data
             if (this._groups.Count != 0)
                 return;
 
-            Uri dataUri = new Uri("ms-appx:///DataModel/SampleData.json");
+            //Uri dataUri = new Uri("ms-appx:///DataModel/SampleData.json");
+            //
+            //StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);
+            //string jsonText = await FileIO.ReadTextAsync(file);
 
-            StorageFile file = await StorageFile.GetFileFromApplicationUriAsync(dataUri);
-            string jsonText = await FileIO.ReadTextAsync(file);
-            JsonObject jsonObject = JsonObject.Parse(jsonText);
-            JsonArray jsonArray = jsonObject["Groups"].GetArray();
+            var client = new HttpClient();
+            string jsonText = await client.GetStringAsync("http://localhost:61662/api/values");
+            // 
+            //JsonObject jsonObject = JsonObject.Parse(jsonText);
+            JsonArray jsonArray = JsonArray.Parse(jsonText);
 
             foreach (JsonValue groupValue in jsonArray)
             {
@@ -136,16 +141,16 @@ namespace CodeKuWP8.Data
                                                             groupObject["ImagePath"].GetString(),
                                                             groupObject["Description"].GetString());
 
-                foreach (JsonValue itemValue in groupObject["Items"].GetArray())
-                {
-                    JsonObject itemObject = itemValue.GetObject();
-                    group.Items.Add(new SampleDataItem(itemObject["UniqueId"].GetString(),
-                                                       itemObject["Title"].GetString(),
-                                                       itemObject["Subtitle"].GetString(),
-                                                       itemObject["ImagePath"].GetString(),
-                                                       itemObject["Description"].GetString(),
-                                                       itemObject["Content"].GetString()));
-                }
+                //foreach (JsonValue itemValue in groupObject["Items"].GetArray())
+                //{
+                //    JsonObject itemObject = itemValue.GetObject();
+                //    group.Items.Add(new SampleDataItem(itemObject["UniqueId"].GetString(),
+                //                                       itemObject["Title"].GetString(),
+                //                                       itemObject["Subtitle"].GetString(),
+                //                                       itemObject["ImagePath"].GetString(),
+                //                                       itemObject["Description"].GetString(),
+                //                                       itemObject["Content"].GetString()));
+                //}
                 this.Groups.Add(group);
             }
         }
