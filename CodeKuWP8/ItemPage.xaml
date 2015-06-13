@@ -9,7 +9,9 @@
     mc:Ignorable="d"
     DataContext="{Binding DefaultViewModel.Item, RelativeSource={RelativeSource Self}}"
     d:DataContext="{Binding Groups[0].Items[0], Source={d:DesignData Source=/DataModel/SampleData.json, Type=data:SampleDataSource}}"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    xmlns:ui="using:TextEditor.UI"
+    xmlns:lang="using:TextEditor.Languages">
     <Page.Transitions>
         <TransitionCollection>
             <NavigationThemeTransition>
@@ -41,8 +43,16 @@
             TODO: Content should be placed within the following grid 
                   to show details for the current item
         -->
-        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
-
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="0,0,0,0">
+            <ui:SyntaxViewer
+                Grid.Row="1" 
+                Margin="0" 
+                BorderBrush="LightGray" BorderThickness="0" 
+                x:Name="codeviewer">
+                <ui:SyntaxViewer.SyntaxLanguage>
+                    <lang:PythonSyntaxLanguage />
+                </ui:SyntaxViewer.SyntaxLanguage>
+            </ui:SyntaxViewer>
         </Grid>
     </Grid>
 </Page>

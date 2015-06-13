@@ -141,16 +141,16 @@ namespace CodeKuWP8.Data
                                                             groupObject["ImagePath"].GetString(),
                                                             groupObject["Description"].GetString());
 
-                //foreach (JsonValue itemValue in groupObject["Items"].GetArray())
-                //{
-                //    JsonObject itemObject = itemValue.GetObject();
-                //    group.Items.Add(new SampleDataItem(itemObject["UniqueId"].GetString(),
-                //                                       itemObject["Title"].GetString(),
-                //                                       itemObject["Subtitle"].GetString(),
-                //                                       itemObject["ImagePath"].GetString(),
-                //                                       itemObject["Description"].GetString(),
-                //                                       itemObject["Content"].GetString()));
-                //}
+                foreach (JsonValue itemValue in groupObject["Items"].GetArray())
+                {
+                    JsonObject itemObject = itemValue.GetObject();
+                    group.Items.Add(new SampleDataItem(itemObject["UniqueId"].GetString(),
+                                                       itemObject["Title"].GetString(),
+                                                       itemObject["Subtitle"].GetString(),
+                                                       itemObject["ImagePath"].GetString(),
+                                                       itemObject["Description"].GetString(),
+                                                       itemObject["Content"].GetString()));
+                }
                 this.Groups.Add(group);
             }
         }

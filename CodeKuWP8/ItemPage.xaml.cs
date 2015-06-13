@@ -71,6 +71,11 @@ namespace CodeKuWP8
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
             var item = await SampleDataSource.GetItemAsync((string)e.NavigationParameter);
             this.DefaultViewModel["Item"] = item;
+            this.codeviewer.Text = @"
+class rgb(object):
+    def __init__(self, red, green, blue):
+        self.red = red
+        self.green = green\r        self.blue = blue\r        \r    def __str__(self):\r        return str([self.red, self.green, self.blue])\r\r    def __repr__(self):\r        return str([self.red, self.green, self.blue])\r\r    def __len__(self):\r        red_len = len(str(self.red)) if self.red > 0 else 0\r        green_len =  len(str(self.green)) if self.green > 0 else 0\r        blue_len = len(str(self.blue)) if self.blue > 0 else 0\r        return red_len + green_len + blue_len\r    \r    def __add__(self, other_color):\r        return rgb(min(self.red + other_color.red, 255),\r                   min(self.green+other_color.green,255),\r                   min(self.blue + other_color.blue, 255))\r\r    def __sub__(self, other_color):\r        return Color(max(self.red - other_color.red, 0),\r                     max(self.green-other_color.green,0),\r                     max(self.blue - other_color.blue, 0))\r\r    def __eq__(self, other_color):\r        return  self.red == other_color.red and \\\r                self.green == other_color.green and \\\r                self.blue == other_color.blue\r\r    def lightness(self):\r        strong = max(self.red, self.blue, self.green)\r        weak = min(self.red, self.blue, self.green)\r        return 0.5 * (strong + weak) / 255\r";
         }
 
         /// <summary>

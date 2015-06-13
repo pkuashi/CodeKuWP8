@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeKuWP8", "CodeKuWP8\CodeKuWP8.csproj", "{F3F327E6-C1AC-46F7-AD13-E7CC54140ED8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextEditor", "TextEditor\TextEditor.csproj", "{E7C96A90-8439-43CB-84D6-75ABF4D46CB7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,14 @@ Global
 		{F3F327E6-C1AC-46F7-AD13-E7CC54140ED8}.Release|x86.ActiveCfg = Release|x86
 		{F3F327E6-C1AC-46F7-AD13-E7CC54140ED8}.Release|x86.Build.0 = Release|x86
 		{F3F327E6-C1AC-46F7-AD13-E7CC54140ED8}.Release|x86.Deploy.0 = Release|x86
+		{E7C96A90-8439-43CB-84D6-75ABF4D46CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7C96A90-8439-43CB-84D6-75ABF4D46CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7C96A90-8439-43CB-84D6-75ABF4D46CB7}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{E7C96A90-8439-43CB-84D6-75ABF4D46CB7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E7C96A90-8439-43CB-84D6-75ABF4D46CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7C96A90-8439-43CB-84D6-75ABF4D46CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7C96A90-8439-43CB-84D6-75ABF4D46CB7}.Release|ARM.ActiveCfg = Release|Any CPU
+		{E7C96A90-8439-43CB-84D6-75ABF4D46CB7}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

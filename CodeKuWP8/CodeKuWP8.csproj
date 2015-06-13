@@ -144,6 +144,12 @@
   <ItemGroup>
     <PRIResource Include="Strings\zh-CN\Resources.resw" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TextEditor\TextEditor.csproj">
+      <Project>{e7c96a90-8439-43cb-84d6-75abf4d46cb7}</Project>
+      <Name>TextEditor</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
   </PropertyGroup>
