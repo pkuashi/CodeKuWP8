@@ -42,6 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IndentationProvider.cs" />
+    <Compile Include="Languages\CPlusPlusGrammer.cs" />
+    <Compile Include="Languages\CPlusPlusIndentationProvider.cs" />
+    <Compile Include="Languages\CPlusPlusSyntaxLanguage.cs" />
+    <Compile Include="Languages\CSharpGrammer.cs" />
+    <Compile Include="Languages\CSharpIndentationProvider.cs" />
+    <Compile Include="Languages\CSharpSyntaxLanguage.cs" />
     <Compile Include="Languages\PythonGrammer.cs" />
     <Compile Include="Languages\PythonIndentationProvider.cs" />
     <Compile Include="Languages\PythonSyntaxLanguage.cs" />
